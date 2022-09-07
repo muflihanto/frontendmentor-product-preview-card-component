@@ -1,0 +1,158 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 14px;
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cream);
+  padding: 5%;
+  height: 100vh;
+}
+
+#card-container {
+  width: 100%;
+  min-width: 570px;
+  max-width: calc(600 / 1440 * 100vw);
+  height: 56.25vh;
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 0 4px 14px -12px var(--very-dark-blue);
+}
+
+#card {
+  display: flex;
+  height: 100%;
+}
+
+#card-preview {
+  border-radius: 1rem 0 0 1rem;
+  overflow: hidden;
+  background: center / cover no-repeat var(--dark-grayish-blue) url("./images/image-product-desktop.jpg");
+}
+
+#card-preview,
+#card-info {
+  flex: 50%;
+}
+
+#card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1rem 2rem;
+  overflow: scroll;
+}
+
+.font-serif {
+  font-size: 2.2rem;
+  font-family: "Fraunces", serif;
+  color: var(--very-dark-blue);
+  line-height: 100%;
+}
+
+.font-san-serif {
+  font-family: "Montserrat", sans-serif;
+  font-weight: lighter;
+  color: var(--dark-grayish-blue);
+}
+
+#info-category {
+  font-size: 0.8rem;
+  font-weight: 100;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+}
+
+#info-description {
+  line-height: 160%;
+}
+
+#info-price {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#info-discounted-price {
+  color: var(--dark-cyan);
+}
+
+#info-real-price {
+  text-decoration: line-through;
+}
+
+#cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  border: none;
+  height: 3rem;
+  border-radius: 0.6rem;
+  background-color: var(--dark-cyan);
+  color: var(--white);
+  font-weight: 700;
+}
+
+#cta:hover {
+  cursor: pointer;
+  background-color: var(--dark-grayish-blue);
+}
+
+#cta:active {
+  background-color: var(--very-dark-blue);
+}
+
+.attribution {
+  position: absolute;
+  bottom: 8px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--dark-cyan);
+  font-family: "Fraunces", serif;
+  text-decoration: none;
+}
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+@media (orientation: portrait) or (max-width: 375px) {
+  #card-container {
+    min-width: 100%;
+    max-width: 375px;
+    height: 90vh;
+    max-height: 667px;
+  }
+
+  #card {
+    flex-direction: column;
+  }
+
+  #card-preview {
+    border-radius: 1rem 1rem 0 0;
+    flex: 40%;
+    background: top / cover no-repeat url("./images/image-product-mobile.jpg");
+  }
+
+  #card-info {
+    flex: 60%;
+  }
+}
