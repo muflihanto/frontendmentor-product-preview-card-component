@@ -39,7 +39,16 @@
   <body>
     <main id="container">
       <div id="card">
-        <div id="card-preview"></div>
+        <picture id="card-preview">
+          <source
+            media="(max-width: 375px),(orientation: portrait)"
+            srcset="./images/image-product-mobile.jpg"
+          />
+          <img
+            src="./images/image-product-desktop.jpg"
+            alt="Image Product"
+          />
+        </picture>
         <div id="card-info">
           <h3
             id="info-category"

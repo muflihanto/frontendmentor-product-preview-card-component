@@ -44,7 +44,11 @@ body {
 #card-preview {
   border-radius: 1rem 0 0 1rem;
   overflow: hidden;
-  background: center / cover no-repeat var(--dark-grayish-blue) url("./images/image-product-desktop.jpg");
+}
+
+#card-preview img {
+  width: 100%;
+  object-fit: cover;
 }
 
 #card-preview,
@@ -152,7 +156,6 @@ body {
   #card-preview {
     border-radius: 1rem 1rem 0 0;
     flex: 40%;
-    background: top / cover no-repeat url("./images/image-product-mobile.jpg");
   }
 
   #card-info {
